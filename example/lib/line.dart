@@ -48,12 +48,12 @@ class LineBodyState extends State<LineBody> {
   }
 
   _onLineTapped(Line line) async {
-    await _updateSelectedLine(
-      LineOptions(lineColor: "#ff0000"),
-    );
     setState(() {
       _selectedLine = line;
     });
+    await _updateSelectedLine(
+      LineOptions(lineColor: "#ff0000"),
+    );
   }
 
   Future<void> _updateSelectedLine(LineOptions changes) {
@@ -142,7 +142,7 @@ class LineBodyState extends State<LineBody> {
             child: MapboxMap(
               accessToken: MapsDemo.ACCESS_TOKEN,
               onMapCreated: _onMapCreated,
-              onStyleLoadedCallback: _onStyleLoadedCallback,
+              onStyleLoadedCallback: onStyleLoadedCallback,
               initialCameraPosition: const CameraPosition(
                 target: LatLng(-33.852, 151.211),
                 zoom: 11.0,
