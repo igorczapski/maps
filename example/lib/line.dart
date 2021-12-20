@@ -121,7 +121,8 @@ class LineBodyState extends State<LineBody> {
   }
 
   void onStyleLoadedCallback() {
-    lineManager = LineManager(controller!, onTap: _onLineTapped);
+    lineManager =
+        LineManager(controller!, onTap: _onLineTapped, enableInteraction: true);
   }
 
   @override
